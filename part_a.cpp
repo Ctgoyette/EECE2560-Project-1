@@ -1,21 +1,4 @@
-#include <iostream>
-#include <random>
-#include <vector>
-using namespace std;
-
-class Code{
-    public:
-        Code(int n, int m) : codeLength(n), codeRange(m) { initCode(); }
-        int checkCorrect(const Code& guessCode);
-        int checkIncorrect(const Code& guessCode);
-        void printCode();
-        void setCode(const vector<int> newCode);
-    private:
-        int codeLength;
-        int codeRange;
-        void initCode();
-        vector<int> thisCode;
-};
+#include "part_a.hpp"
 
 void Code::initCode(){
     srand(time(NULL));
@@ -77,6 +60,7 @@ void Code::setCode(const vector<int> newCode){
 
 int main(){
     Code myCode(5, 7);
+    myCode.initCode();
     myCode.printCode();
     Code guess1(5, 7); guess1.setCode({5, 0, 3, 2, 6});
     Code guess2(5, 7); guess2.setCode({2, 1, 2, 2, 2});
