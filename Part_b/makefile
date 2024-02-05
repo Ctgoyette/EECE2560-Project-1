@@ -17,6 +17,3 @@ response.o: response.hpp response.cpp
 
 code.o: code.cpp code.hpp
 	g++ -c code.cpp
-
-clean:
-	rm *.o

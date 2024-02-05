@@ -12,5 +12,3 @@ main.o: main.cpp
 code.o: code.cpp code.hpp
 	g++ -c code.cpp
 
-clean:
-	rm *.o

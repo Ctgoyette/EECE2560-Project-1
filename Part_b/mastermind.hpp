@@ -9,27 +9,27 @@
 
 using namespace std;
 
-class mastermind{
+class Mastermind{
     public:
         /**
-         * @brief Construct a new mastermind object. Defaults codeLength to be 5 and codeRange to be 10
+         * @brief Construct a new Mastermind object. Defaults codeLength to be 5 and codeRange to be 10
          * 
          */
-        mastermind() {codeLength = 5; codeRange = 10;}
+        Mastermind() {codeLength = 5; codeRange = 10;}
 
         /**
-         * @brief Construct a new mastermind object. User input determines codeLength and codeRange.
+         * @brief Construct a new Mastermind object. User input determines codeLength and codeRange.
          * 
          * @param n Determines codeLength
          * @param m Determines codeRange
          */
-        mastermind(int n, int m) : codeLength(n), codeRange(m) {}
+        Mastermind(int n, int m) : codeLength(n), codeRange(m) {}
 
 
         void printCode();
 
         /**
-         * @brief Contains the main logic of the mastermind game. Initializes a code, prints it out, and initializes
+         * @brief Contains the main logic of the Mastermind game. Initializes a code, prints it out, and initializes
          * correctCodeResponse for comparison to human guesses. Allows user 10 attempts to guess the code and responds
          * with the numberCorrect and numberIncorrect as a response.
          * 

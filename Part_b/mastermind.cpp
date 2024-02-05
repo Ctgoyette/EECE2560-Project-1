@@ -2,7 +2,7 @@
 #include "code.hpp"
 
 
-void mastermind::playGame(){
+void Mastermind::playGame(){
 
     // Initializes the secret code
     code.initCode();
@@ -39,7 +39,7 @@ void mastermind::playGame(){
 }
 
 
-Code mastermind::humanGuess(){
+Code Mastermind::humanGuess(){
     // Initializes a container for user input
     vector<int> guessVector;
     int guessDigit;
@@ -67,7 +67,7 @@ Code mastermind::humanGuess(){
 }
 
 
-Response mastermind::getResponse(Code guessCode){
+Response Mastermind::getResponse(Code guessCode){
     // Initializes a response to the user guess
     Response guessResponse;
     guessResponse.setNumCorrect(code.checkCorrect(guessCode));
@@ -76,12 +76,12 @@ Response mastermind::getResponse(Code guessCode){
 }
 
 
-bool mastermind::isSolved(Response& guessResponse){
+bool Mastermind::isSolved(Response& guessResponse){
     return correctCodeResponse == guessResponse;
 }
 
 
-void mastermind::printCode(){
+void Mastermind::printCode(){
     code.printCode();
 }
 
