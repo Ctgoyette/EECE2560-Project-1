@@ -54,7 +54,12 @@ Code Mastermind::humanGuess(){
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             i--;
         }
+        if (guessDigit < 0 || guessDigit > codeRange-1){
+            cout << "Sorry, that number is not in the range of digits. Please enter a number between 0 and " << codeRange << ", not including " << codeRange << "." << endl;
+            i--;
+        }
         else{
+            cin.ignore(codeRange-1, '\n');
             guessVector.push_back(guessDigit);
         }
     }
