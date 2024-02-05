@@ -48,7 +48,15 @@ Code mastermind::humanGuess(){
     for (int i = 0; i < codeLength; i++){
         cout << "Please enter digit " << i+1 << endl;
         cin >> guessDigit;
-        guessVector.push_back(guessDigit);
+        if (cin.fail()){
+            cout << "Sorry, that's not an integer! Please enter an integer digit" << endl;
+            cin.clear();
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            i--;
+        }
+        else{
+            guessVector.push_back(guessDigit);
+        }
     }
 
     // Creates a code object for the user guess
