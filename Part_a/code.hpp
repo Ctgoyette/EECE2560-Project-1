@@ -1,5 +1,5 @@
-#ifndef PART_A_HPP
-#define PART_A_HPP
+#ifndef CODE_HPP
+#define CODE_HPP
 
 #include <iostream>
 #include <random>
