@@ -1,7 +1,7 @@
-all: output run
+all: output
 
 output: main.o mastermind.o code.o response.o
-	g++ main.o mastermind.o code.o response.o -o output
+	g++ main.o mastermind.o code.o response.o -o part_b
 
 run:
 	output
