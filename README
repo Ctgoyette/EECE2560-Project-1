@@ -1,3 +1,5 @@
 Part A can be compiled by running 'make all' from the terminal in the subdirectory "Part_a". The program can then be run using the command './part_a'
 
 Part B can be compiled by running 'make all' from the terminal in the subdirectory "Part_b". The program can then be run using the command './part_b'
+
+In part_b, users are asked to enter digits. When asked to enter digits, enter the desired digit, then press enter to move on to entering the next digit.
