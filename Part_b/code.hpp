@@ -7,7 +7,6 @@
 
 using namespace std;
 
-
 class Code{
     public:
 
@@ -41,7 +40,7 @@ class Code{
          * @brief Prints out the code vector
          * 
          */
-        void printCode();
+        void printCode(string codeType);
 
         /**
          * @brief Get the Code private data member 

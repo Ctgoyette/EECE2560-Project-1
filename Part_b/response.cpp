@@ -1,7 +1,7 @@
 #include "response.hpp"
 
 ostream& operator<< (ostream& out, const Response& outputResponse){
-    out << "Mastermind Guess Response: " << outputResponse.numCorrect << "," << outputResponse.numIncorrect << endl;
+    out << "*** Mastermind Guess Response: " << outputResponse.numCorrect << "," << outputResponse.numIncorrect << endl;
     return out;
 }
 

@@ -25,7 +25,10 @@ class Mastermind{
          */
         Mastermind(int n, int m) : codeLength(n), codeRange(m) {}
 
-
+        /**
+         * @brief Prints the secret code
+         * 
+         */
         void printCode();
 
         /**

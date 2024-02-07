@@ -37,8 +37,11 @@ int Code::checkIncorrect(Code guessCode){
     // Iterates over length of the secret code
     for (int i = 0; i < codeLength; i++){
         
+        // Checks to see if the current guess digit matches the current game code digit
         if (thisCode[i] != guessVec[i]){
             bool duplicateDetected = 0;
+
+            // Iterates until a duplicate value is found or the for loop ends
             for (int j = 0; j < codeNoDuplicates.size(); j++){
                 if (thisCode[i] == codeNoDuplicates[j]){
                     duplicateDetected = 1;
@@ -46,6 +49,8 @@ int Code::checkIncorrect(Code guessCode){
                 }
 
             }
+
+            // If no duplicates are detected, adds the current guess digit to the temporary code vector and checks if the current secret code digit is in the user guess
             if (!duplicateDetected){
                 codeNoDuplicates.push_back(thisCode[i]);
                 for (int k = 0; k < codeLength; k++){
@@ -61,13 +66,14 @@ int Code::checkIncorrect(Code guessCode){
     return numIncorrect; 
 }
 
-void Code::printCode(){
-    cout << "Secret Code: " << thisCode[0];
+void Code::printCode(string codeType){
+    cout << codeType << thisCode[0];
     for (int i = 1; i < codeLength; i++){
         cout << "," << thisCode[i];
     }
     cout << endl;
 }
+
 
 void Code::setCode(const vector<int> newCode){
     thisCode = newCode;

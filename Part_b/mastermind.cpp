@@ -28,8 +28,9 @@ void Mastermind::playGame(){
             cout << "You won!" << endl;
             break;
         }
+
+        // if the user is out of guesses
         else{
-            // if the user is out of guesses
             if (i == 9){
                 cout << "Sorry, you lost! Better luck next time!" << endl;
             }
@@ -48,16 +49,21 @@ Code Mastermind::humanGuess(){
     for (int i = 0; i < codeLength; i++){
         cout << "Please enter digit " << i+1 << endl;
         cin >> guessDigit;
+
+        // Checks if the previous cin operation failed, indicating that the input was not an integer
         if (cin.fail()){
             cout << "Sorry, that's not an integer! Please enter an integer digit" << endl;
             cin.clear();
             cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             i--;
         }
-        if (guessDigit < 0 || guessDigit > codeRange-1){
-            cout << "Sorry, that number is not in the range of digits. Please enter a number between 0 and " << codeRange << ", not including " << codeRange << "." << endl;
+        // Checks if the number input is within the range of digits specified at the beginning of the game
+        else if (guessDigit < 0 || guessDigit > codeRange-1){
+            cout << "Sorry, that number is not in the range of digits. Please enter a number from 0 to " << codeRange << ", not including " << codeRange << "." << endl;
             i--;
         }
+
+        // If no errors are found, only takes in the first input and adds the guess to the guess code
         else{
             cin.ignore(codeRange-1, '\n');
             guessVector.push_back(guessDigit);
@@ -67,7 +73,7 @@ Code Mastermind::humanGuess(){
     // Creates a code object for the user guess
     Code guessCode(codeLength, codeRange);
     guessCode.setCode(guessVector);
-    guessCode.printCode();
+    guessCode.printCode("\n*** Your Guess: ");
     return guessCode;
 }
 
@@ -87,7 +93,7 @@ bool Mastermind::isSolved(Response& guessResponse){
 
 
 void Mastermind::printCode(){
-    code.printCode();
+    code.printCode("Secret Code: ");
 }
 
 

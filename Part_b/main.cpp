@@ -9,7 +9,7 @@ int main(){
     // Checks that input for n and m are positive integers and alerts user if not
     int n, m;
     bool valid = false;
-    while (not valid){
+    while (!valid){
         cin >> n >> m;
         if(cin.fail()){
             cin.clear();
